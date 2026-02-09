@@ -1,0 +1,15 @@
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "item",
+					"name": "qcs_portfolio:lightning_tnt_block",
+                    "count": 1,
+					"weight": 1
+				}
+			]
+		}
+	]
+}

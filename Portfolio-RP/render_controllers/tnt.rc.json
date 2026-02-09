@@ -1,0 +1,21 @@
+{
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.qcs_portfolio.tnt": {
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "!q.property('qcs_portfolio:fuse_lit') ? Material.default : Material.animated"
+                }
+            ],
+            "textures": ["!q.property('qcs_portfolio:fuse_lit') ? Texture.default : Texture.prime"],
+            "uv_anim": {
+                "offset": [0, "math.mod(math.floor(q.life_time * 4), 2) / 2"],
+                "scale": [1, "1 / 2"]
+            },
+            "is_hurt_color": {},
+            "on_fire_color": {},
+            "ignore_lighting": false
+        }
+    }
+}

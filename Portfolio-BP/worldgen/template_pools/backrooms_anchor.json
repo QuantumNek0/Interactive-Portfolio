@@ -1,0 +1,17 @@
+{
+    "format_version": "1.21.60",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "qcs_portfolio:backrooms_anchor"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "qcs/portfolio/backrooms"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

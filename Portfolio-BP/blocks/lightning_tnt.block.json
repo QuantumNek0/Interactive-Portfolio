@@ -1,0 +1,24 @@
+{
+    "format_version": "1.21.60",
+    "minecraft:block": {
+        "description": {
+            "identifier": "qcs_portfolio:lightning_tnt_block",
+            "menu_category": {
+                "category": "items"
+            }
+        },
+        "components": {
+            "qcs_portfolio:entity_placer": {
+                "entity": "qcs_portfolio:lightning_tnt"
+            },
+            "minecraft:material_instances": {
+				"*": {
+					"texture": "texture.qcs_portfolio.lightning_tnt",
+					"render_method": "opaque"
+				}
+			},
+            "minecraft:geometry": "geometry.qcs_portfolio.full_block",
+            "minecraft:loot": "loot_tables/empty.json"
+        }
+    }
+}

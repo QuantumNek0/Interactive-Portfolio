@@ -1,0 +1,43 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "pack.name",
+		"description": "pack.description",
+		"pack_scope": "world",
+		"uuid": "df5cf1e4-8000-4caf-a999-15f5cc15e529",
+		"version": [1, 0, 0],
+		"min_engine_version": [1, 21, 120]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "d1e6f533-f328-44de-aed7-6d11887d7b88",
+			"version": [1, 0, 0]
+		},
+		{
+			"type": "script",
+			"language": "javascript",
+			"entry": "scripts/main.js",
+			"uuid": "346dc473-2786-4781-9bb4-f41e3a6385cf",
+			"version": [1, 0, 0]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "ef701b4c-c1fa-49be-a854-a7f931754a09",
+			"version": [1, 0, 0]
+		},
+		{
+			"module_name": "@minecraft/server",
+			"version": "2.4.0"
+		},
+		{
+			"module_name": "@minecraft/server-ui",
+			"version": "2.0.0"
+		}
+	],
+	"metadata": {
+		"authors": ["Quantum Cube Studios"],
+		"product_type": "addon"
+	}
+}

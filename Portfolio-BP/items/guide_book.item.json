@@ -1,0 +1,18 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:item": {
+        "description": {
+            "identifier": "qcs_portfolio:guide_book",
+            "menu_category": {
+                "category": "items"
+            }
+        },
+        "components": {
+            "qcs_portfolio:guide_book": {
+                "auto_headers": true
+            },
+            "minecraft:icon": "book_written",
+            "minecraft:glint": true
+        }
+    }
+}

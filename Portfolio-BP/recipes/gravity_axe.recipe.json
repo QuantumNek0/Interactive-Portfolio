@@ -1,0 +1,26 @@
+{
+    "format_version": "1.21.60",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "qcs_portfolio:gravity_axe"
+        },
+        "tags": ["crafting_table"],
+        "ingredients": [
+            {
+                "item": "minecraft:netherite_axe"
+            },
+            {
+                "item": "qcs_portfolio:diamond_dust"
+            }
+        ],
+        "result": {
+            "item": "qcs_portfolio:gravity_axe",
+            "count": 1
+        },
+        "unlock": [
+            {
+                "item": "qcs_portfolio:diamond_dust"
+            }
+        ]
+    }
+}

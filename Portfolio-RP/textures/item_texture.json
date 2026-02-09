@@ -1,0 +1,27 @@
+{
+    "resource_pack_name": "pack.name",
+    "texture_name": "atlas.items",
+    "texture_data": {
+        "texture.qcs_portfolio.diamond_dust": {
+            "textures": "textures/qcs/portfolio/items/diamond_dust"
+        },
+        "texture.qcs_portfolio.diamond_flower_seeds": {
+            "textures": "textures/qcs/portfolio/items/diamond_flower_seeds"
+        },
+        "texture.qcs_portfolio.haste_potion": {
+            "textures": "textures/qcs/portfolio/items/haste_potion"
+        },
+        "texture.qcs_portfolio.netherite_pickaxe": {
+            "textures": "textures/items/netherite_pickaxe"
+        },
+        "texture.qcs_portfolio.netherite_axe": {
+            "textures": "textures/items/netherite_axe"
+        },
+        "texture.qcs_portfolio.diamond_torch_on": {
+            "textures": "textures/blocks/soul_torch"
+        },
+        "texture.qcs_portfolio.diamond_torch_off": {
+            "textures": "textures/qcs/portfolio/items/diamond_torch_off"
+        }
+    }
+}

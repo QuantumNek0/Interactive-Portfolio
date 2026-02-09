@@ -1,0 +1,14 @@
+{
+    "format_version": "1.21.60",
+    "minecraft:item": {
+        "description": {
+            "identifier": "qcs_portfolio:diamond_dust",
+            "menu_category": {
+                "category": "items"
+            }
+        },
+        "components": {
+            "minecraft:icon": "texture.qcs_portfolio.diamond_dust"
+        }
+    }
+}

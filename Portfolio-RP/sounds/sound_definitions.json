@@ -1,0 +1,17 @@
+{
+    "format_version": "1.26.0",
+    "sound_definitions": {
+        "music.qcs_portfolio.backrooms": {
+            "category": "music",
+            "min_distance": null,
+            "max_distance": null,
+            "sounds": [
+                {
+                    "name": "sounds/qcs/portfolio/music/backrooms",
+                    "stream": true,
+                    "volume": 0.5
+                }
+            ]
+        }
+    }
+}

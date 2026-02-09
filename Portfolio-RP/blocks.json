@@ -1,0 +1,9 @@
+{
+	"format_version": "1.21.40",
+	"qcs_portfolio:diamond_flower": {
+		"sound": "grass"
+	},
+	"qcs_portfolio:lightning_tnt_block": {
+		"sound": "grass"
+	}
+}

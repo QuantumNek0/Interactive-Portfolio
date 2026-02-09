@@ -1,0 +1,21 @@
+{
+    "entity_sounds": {
+        "entities": {
+            "qcs_portfolio:lightning_tnt": {
+                "events": {
+                    "death": {
+                        "sound": ""
+                    },
+                    "hurt": {
+                        "sound": ""
+                    }
+                },
+                "pitch": [
+                    0.8,
+                    1.2
+                ],
+                "volume": 1
+            }
+        }
+    }
+}

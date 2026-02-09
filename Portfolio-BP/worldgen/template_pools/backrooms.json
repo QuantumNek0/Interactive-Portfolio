@@ -1,0 +1,39 @@
+{
+    "format_version": "1.21.60",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "qcs_portfolio:backrooms"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "qcs/portfolio/backrooms"
+                },
+                "weight": 1
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "qcs/portfolio/backroom_hallway"
+                },
+                "weight": 1
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "qcs/portfolio/backrooms_dark"
+                },
+                "weight": 1
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "qcs/portfolio/hallway_dark"
+                },
+                "weight": 1
+            }
+        ],
+        "fallback": "qcs_portfolio:backroom_caps"
+    }
+}

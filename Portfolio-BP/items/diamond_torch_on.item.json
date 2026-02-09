@@ -1,0 +1,21 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:item": {
+        "description": {
+            "identifier": "qcs_portfolio:diamond_torch_on",
+            "menu_category": {
+                "category": "none",
+                "is_hidden_in_commands": true
+            }
+        },
+        "components": {
+            "qcs_portfolio:dynamic_lighting": {
+                "light_level": 15,
+                "toggle_item": "qcs_portfolio:diamond_torch_off"
+            },
+            "minecraft:allow_off_hand": true,
+            "minecraft:max_stack_size": 1,
+            "minecraft:icon": "texture.qcs_portfolio.diamond_torch_on"
+        }
+    }
+}

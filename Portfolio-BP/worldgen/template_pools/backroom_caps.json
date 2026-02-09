@@ -1,0 +1,31 @@
+{
+    "format_version": "1.21.60",
+    "minecraft:template_pool": {
+        "description": {
+            "identifier": "qcs_portfolio:backroom_caps"
+        },
+        "elements": [
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "qcs/portfolio/backroom_wall"
+                },
+                "weight": 1
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "qcs/portfolio/backroom_floor"
+                },
+                "weight": 1
+            },
+            {
+                "element": {
+                    "element_type": "minecraft:single_pool_element",
+                    "location": "qcs/portfolio/backroom_ceil"
+                },
+                "weight": 1
+            }
+        ]
+    }
+}

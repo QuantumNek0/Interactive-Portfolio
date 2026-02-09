@@ -1,0 +1,35 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:item": {
+        "description": {
+            "identifier": "qcs_portfolio:haste_potion",
+            "menu_category": {
+                "category": "equipment",
+                "group": "minecraft:itemGroup.name.potion"
+            }
+        },
+        "components": {
+            "qcs_portfolio:consume_effect": {
+                "effect": "minecraft:haste",
+                "duration": 30,
+                "amplifier": 0
+            },
+            "minecraft:food": {
+                "can_always_eat": true,
+                "nutrition": 0,
+                "saturation_modifier": 0,
+                "using_converts_to": "minecraft:glass_bottle"
+            },
+            "minecraft:use_modifiers": {
+                "use_duration": 1.6,
+                "movement_modifier": 0.1
+            },
+            "minecraft:use_animation": "drink",
+            "minecraft:max_stack_size": 1,
+            "minecraft:icon": "texture.qcs_portfolio.haste_potion",
+            "minecraft:display_name": {
+                "value": "Potion of Haste\n§7Haste (0:30)\n\n§5When Applied:\n§9+20%% Mining Speed"
+            }
+        }
+    }
+}

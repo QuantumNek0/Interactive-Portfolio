@@ -1,0 +1,14 @@
+pack.name=Axl's Portfolio
+pack.description=The resource pack for Axl's Portfolio.
+item.qcs_portfolio:diamond_dust=Diamond Dust
+item.qcs_portfolio:diamond_flower_seeds=Diamond Flower Seeds
+tile.qcs_portfolio:diamond_flower.name=Diamond Flower
+item.qcs_portfolio:haste_potion=Haste Potion
+tile.qcs_portfolio:diamond_dust_ore.name=Diamond Dust Ore
+tile.qcs_portfolio:lightning_tnt_block.name=Lightning TNT
+entity.qcs_portfolio:lightning_tnt.name=Lightning TNT
+item.qcs_portfolio:guide_book=§6Axl's Portfolio
+item.qcs_portfolio:diamond_torch_off=Diamond Torch §7(off)
+item.qcs_portfolio:diamond_torch_on=Diamond Torch §p(on)
+item.qcs_portfolio:gravity_axe=Gravity Axe
+item.qcs_portfolio:tnt_pickaxe=TNT Pickaxe

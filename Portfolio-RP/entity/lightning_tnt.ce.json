@@ -1,0 +1,20 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "qcs_portfolio:lightning_tnt",
+            "materials": {
+                "default": "opaque_block",
+                "animated": "uv_animated"
+            },
+            "textures": {
+                "default": "textures/qcs/portfolio/blocks/lightning_tnt",
+                "prime": "textures/qcs/portfolio/blocks/lightning_tnt_prime"
+            },
+            "geometry": {
+                "default": "geometry.qcs_portfolio.full_block"
+            },
+            "render_controllers": ["controller.render.qcs_portfolio.tnt"]
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "format_version": "1.21.60",
+    "minecraft:recipe_brewing_mix": {
+        "description": {
+            "identifier": "qcs_portfolio:haste_potion"
+        },
+        "tags": ["brewing_stand"],
+        "reagent": "qcs_portfolio:diamond_dust",
+        "input": "minecraft:potion:4",
+        "output": "qcs_portfolio:haste_potion",
+        "unlock": [
+            {
+                "item": "qcs_portfolio:diamond_dust"
+            }
+        ]
+    }
+}

@@ -1,0 +1,268 @@
+{
+    "format_version": "1.21.60",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "qcs_portfolio:lightning_tnt",
+            "is_summonable": true,
+            "is_spawnable": false,
+            "is_experimental": false,
+            "properties": {
+                "qcs_portfolio:fuse_lit": {
+                    "type": "bool",
+                    "default": false,
+                    "client_sync": true
+                }
+            }
+        },
+        "components": {
+            "minecraft:type_family": {
+                "family": [
+                    "inanimate",
+                    "qcs_portfolio",
+                    "qcs_portfolio:inanimate"
+                ]
+            },
+            "minecraft:interact": {
+                "interactions": [
+                    {
+                        "on_interact": {
+                            "filters": [
+                                {
+                                    "test": "has_equipment",
+                                    "domain": "hand",
+                                    "value": "minecraft:flint_and_steel",
+                                    "subject": "player"
+                                }
+                            ],
+                            "event": "qcs_portfolio:flint_and_steel_use",
+                            "target": "self"
+                        }
+                    }
+                ]
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "entity_attack",
+                        "deals_damage": "no",
+                        "on_damage": {
+                            "filters": [
+                                {
+                                    "test": "is_family",
+                                    "subject": "damager",
+                                    "value": "player"
+                                }
+                            ],
+                            "event": "qcs_portfolio:break",
+                            "target": "self"
+                        }
+                    },
+                    {
+                        "cause": "entity_explosion",
+                        "deals_damage": "no",
+                        "on_damage": {
+                            "event": "qcs_portfolio:light_fuse",
+                            "target": "self"
+                        }
+                    },
+                    {
+                        "cause": "block_explosion",
+                        "deals_damage": "no",
+                        "on_damage": {
+                            "event": "qcs_portfolio:light_fuse",
+                            "target": "self"
+                        }
+                    },
+                    {
+                        "cause": "fire_tick",
+                        "deals_damage": "no",
+                        "on_damage": {
+                            "event": "qcs_portfolio:light_fuse",
+                            "target": "self"
+                        }
+                    },
+                    {
+                        "cause": "lava",
+                        "deals_damage": "no",
+                        "on_damage": {
+                            "event": "qcs_portfolio:light_fuse",
+                            "target": "self"
+                        }
+                    },
+                    { "deals_damage": "no" }
+                ]
+            },
+            "minecraft:health": {
+                "value": 1,
+                "min": 1,
+                "max": 1
+            },
+            "minecraft:collision_box": {
+                "width": 1,
+                "height": 1
+            },
+            "minecraft:custom_hit_test": {
+                "hitboxes": [
+                    {
+                        "width": 1,
+                        "height": 1,
+                        "pivot": [0, 0, 0]
+                    }
+                ]
+            },
+            "minecraft:knockback_resistance": {
+                "value": 1
+            },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:physics": {
+                "has_gravity": false
+            },
+            "minecraft:persistent": {},
+            "minecraft:conditional_bandwidth_optimization": {}
+        },
+        "events": {
+            "minecraft:entity_spawned": {
+                "queue_command": {
+                    "command": "playsound use.grass @a[r=5] ~ ~ ~"
+                }
+            },
+            "qcs_portfolio:flint_and_steel_use": {
+                "filters": [
+                    {
+                        "test": "bool_property",
+                        "domain": "qcs_portfolio:fuse_lit",
+                        "operator": "==",
+                        "value": false,
+                        "subject": "self"
+                    }
+                ],
+                "queue_command": {
+                    "command": "execute as @e[type=player, r=5] run scriptevent qcs_portfolio:flint_and_steel_use 2.5"
+                },
+                "trigger": "qcs_portfolio:light_fuse"
+            },
+            "qcs_portfolio:light_fuse": {
+                "filters": [
+                    {
+                        "test": "bool_property",
+                        "domain": "qcs_portfolio:fuse_lit",
+                        "operator": "==",
+                        "value": false,
+                        "subject": "self"
+                    }
+                ],
+                "set_property": {
+                    "qcs_portfolio:fuse_lit": true
+                },
+                "queue_command": {
+                    "command": "playsound random.fuse @a[r=5] ~ ~ ~"
+                },
+                "add": {
+                    "component_groups": [
+                        "qcs_portfolio:fuse_timer",
+                        "qcs_portfolio:prime_physics"
+                    ]
+                }
+            },
+            "qcs_portfolio:explode": {
+                "queue_command": {
+                    "command": "scriptevent qcs_portfolio:lightning_storm"
+                },
+                "add": {
+                    "component_groups": [
+                        "qcs_portfolio:explode"
+                    ]
+                }
+            },
+            "qcs_portfolio:break": {
+                "add": {
+                    "component_groups": [
+                        "qcs_portfolio:despawn_timer"
+                    ]
+                },
+                "queue_command": {
+                    "command": [
+                        "setblock ~ ~ ~ qcs_portfolio:lightning_tnt_block",
+                        "setblock ~ ~ ~ air destroy"
+                    ]
+                },
+                "trigger": "qcs_portfolio:loot"
+            },
+            "qcs_portfolio:loot": {
+                "filters": [
+                    {
+                        "test": "has_ability",
+                        "value": "instabuild",
+                        "operator": "!=",
+                        "subject": "player"
+                    }
+                ],
+                "queue_command": {
+                    "command": "loot spawn ~ ~ ~ loot \"qcs/portfolio/entities/lightning_tnt.loot\""
+                }
+            },
+            "qcs_portfolio:despawn": {
+                "add": {
+                    "component_groups": [
+                        "qcs_portfolio:despawn"
+                    ]
+                }
+            }
+        },
+        "component_groups": {
+            "qcs_portfolio:fuse_timer": {
+                "minecraft:timer": {
+                    "time": 4,
+                    "looping": false,
+                    "time_down_event": {
+                        "event": "qcs_portfolio:explode",
+                        "target": "self"
+                    }
+                }
+            },
+            "qcs_portfolio:explode": {
+                "minecraft:explode": {
+                    "power": 4,
+                    "damage_scaling": 1,
+                    "knockback_scaling": 1,
+                    "breaks_blocks": false,
+                    "causes_fire": false,
+                    "toggles_blocks": false,
+                    "allow_underwater": false,
+                    "negates_fall_damage": false,
+                    "fuse_length": -1,
+                    "fuse_lit": true,
+                    "particle_effect": "explosion",
+                    "sound_effect": "explode"
+                }
+            },
+            "qcs_portfolio:prime_physics": {
+                "minecraft:physics": {
+                    "has_gravity": true
+                },
+                "minecraft:knockback_resistance": {
+                    "value": -0.5,
+                    "max": -0.5
+                }
+            },
+            "qcs_portfolio:despawn_timer": {
+                "minecraft:timer": {
+                    "time": 0,
+                    "looping": false,
+                    "time_down_event": {
+                        "event": "qcs_portfolio:despawn",
+                        "target": "self"
+                    }
+                }
+            },
+            "qcs_portfolio:despawn": {
+                "minecraft:instant_despawn": {
+                    "remove_child_entities": false
+                }
+            }
+        }
+    }
+}

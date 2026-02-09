@@ -1,0 +1,27 @@
+{
+    "format_version": "1.21.60",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "qcs_portfolio:diamond"
+        },
+        "tags": ["crafting_table"],
+        "pattern": [
+            "DD",
+            "DD"
+        ],
+        "key": {
+            "D": {
+                "item": "qcs_portfolio:diamond_dust"
+            }
+        },
+        "result": {
+            "item": "minecraft:diamond",
+            "count": 1
+        },
+        "unlock": [
+            {
+                "item": "qcs_portfolio:diamond_dust"
+            }
+        ]
+    }
+}
