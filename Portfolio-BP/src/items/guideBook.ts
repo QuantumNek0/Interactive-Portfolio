@@ -17,9 +17,9 @@ const portfolio: MenuParams = {
     header: "My Portfolio",
     info: [
         "My name is Axl Daniel Jiménez Borges, a professional Minecraft Bedrock developer based in Mexico (CST).",
-        "This interactive portfolio contains a collection of systems and features that I've developed over the years.",
-        "The main goal of this addon is to showcase refined, robust, re-usable and general algorithms that I've integrated into my personal library.",
-        "The primary focus was to obtain the highest quality possible making the features as close as possible to vanilla systems (including creative/survival interactions) and making them tolerable to most edge cases.",
+        "This interactive portfolio contains a small collection of systems and features developed by me.",
+        "The main goal of this addon is to showcase §orefined, robust, re-usable and general algorithms§r that I've integrated into my personal library.",
+        "The primary focus was to obtain the §ohighest quality§r possible making the features as close as possible to vanilla systems (including creative/survival interactions) and making them §oresilient§r to most edge cases.",
     ],
     buttons: [
         {
