@@ -14,8 +14,10 @@
                 "scale": [1, "1 / 2"]
             },
             "is_hurt_color": {},
-            "on_fire_color": {},
-            "ignore_lighting": false
+            "on_fire_color": {
+                "a": 0
+            },
+            "ignore_lighting": true
         }
     }
 }
