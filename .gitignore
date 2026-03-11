@@ -1,0 +1,7 @@
+.vscode
+.mcignore
+.mcattributes
+node_modules
+scripts
+dist
+*.sh

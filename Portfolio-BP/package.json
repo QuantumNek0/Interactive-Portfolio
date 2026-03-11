@@ -1,0 +1,16 @@
+{
+    "name": "portfolio",
+    "author": "Axl Daniel Jimenez Borges",
+    "version": "1.0.0",
+    "main": "esbuild.js",
+    "scripts": {
+        "build": "node esbuild.js"
+    },
+    "dependencies": {
+        "@minecraft/server": "^2.6.0-beta.1.26.3-stable",
+        "@minecraft/server-ui": "^2.1.0-beta.1.26.3-stable"
+    },
+    "devDependencies": {
+        "esbuild": "^0.27.3"
+    }
+}
