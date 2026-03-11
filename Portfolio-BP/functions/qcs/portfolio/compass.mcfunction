@@ -1,8 +1,0 @@
-title @a[rym=157.5,ry=-157.5] actionbar North (N)
-title @a[rym=-22.5,ry=22.5] actionbar South (S)
-title @a[rym=-112.5,ry=-67.5] actionbar East (E)
-title @a[rym=67.5,ry=112.5] actionbar West (W)
-title @a[rym=-157.5,ry=-112.5] actionbar Northeast (NE)
-title @a[rym=112.5,ry=157.5] actionbar Northwest (NW) 
-title @a[rym=-67.5,ry=-22.5] actionbar Southeast (SE)
-title @a[rym=22.5,ry=67.5] actionbar Southwest (SW)
