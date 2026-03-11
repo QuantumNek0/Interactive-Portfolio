@@ -7,15 +7,22 @@ import {
     Player,
     system,
 } from "@minecraft/server";
-import { MinecraftBlockTypes } from "@minecraft/vanilla-data";
 
-import { Area, CubeSize, Mainhand, Query, Vector } from "qcs/minecraft-lib";
+import {
+    Area,
+    AreaUtils,
+    CubeSize,
+    Mainhand,
+    Query,
+    Vector,
+    VectorTranslate,
+} from "qcs-minecraft-lib";
 
 type TNTPickaxeParams = {
     width: number;
     height: number;
     depth: number;
-    relativeOffset?: [x: number, y: number, z: number];
+    relativeOffset: [x: number, y: number, z: number];
 };
 
 const TNT_PARTICLES = "minecraft:huge_explosion_emitter";
@@ -34,24 +41,26 @@ const TNTPickaxe = {
         const facingDirection = Query.facingDirection(event.source);
         const offset = Vector.arrayToVector(params.relativeOffset);
 
-        const startPoint = Vector.Translate.sequence(minedLocation, facingDirection, [
-            { translateFunction: Vector.Translate.right, value: offset.x },
-            { translateFunction: Vector.Translate.up, value: offset.y },
+        const startPoint = VectorTranslate.sequence(minedLocation, facingDirection, [
+            { translateFunction: VectorTranslate.right, value: offset.x },
+            { translateFunction: VectorTranslate.up, value: offset.y },
             {
-                translateFunction: Vector.Translate.forward,
+                translateFunction: VectorTranslate.forward,
                 value: offset.z,
             },
         ]);
-        const endPoint = Area.cubeEndPoint(startPoint, params satisfies CubeSize, facingDirection);
+        const endPoint = AreaUtils.cubeEndPoint(
+            startPoint,
+            params satisfies CubeSize,
+            facingDirection
+        );
         const area = new Area(dimension, startPoint, endPoint);
 
         dimension.spawnParticle(TNT_PARTICLES, minedLocation);
         dimension.playSound(TNT_SOUND, minedLocation);
 
         area.forEachPoint((location) => {
-            dimension.runCommand(
-                `setblock ${Vector.toString(location)} ${MinecraftBlockTypes.Air} destroy`,
-            );
+            dimension.runCommand(`setblock ${Vector.toString(location)} minecraft:air destroy`);
         });
         if (player.getGameMode() === GameMode.Creative) return;
         const mainhand = new Mainhand(player);

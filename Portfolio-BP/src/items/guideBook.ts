@@ -8,9 +8,7 @@ import {
     GameMode,
     WeatherType,
 } from "@minecraft/server";
-import { MinecraftBlockTypes, MinecraftItemTypes } from "@minecraft/vanilla-data";
-
-import { Menu, MenuBuildParams, MenuParams } from "qcs/minecraft-lib";
+import { Menu, MenuBuildParams, MenuParams } from "qcs-minecraft-lib";
 
 const portfolio: MenuParams = {
     title: "Main Menu",
@@ -32,9 +30,13 @@ const portfolio: MenuParams = {
                     "Ambient particles + Harvest system when interacting with shears at maximum growth.",
                 ],
                 recipe: {
-                    keys: {
-                        1: "Torchflower Seeds",
-                        2: "Diamond Dust",
+                    key: {
+                        1: {
+                            item: "Torchflower Seeds",
+                        },
+                        2: {
+                            item: "Diamond Dust",
+                        },
                     },
                 },
                 buttons: [
@@ -43,8 +45,8 @@ const portfolio: MenuParams = {
                         icon: "textures/qcs/portfolio/items/diamond_flower_seeds",
                         action: (player) => {
                             player.runCommand("give @s qcs_portfolio:diamond_flower_seeds 64");
-                            player.runCommand(`give @s ${MinecraftItemTypes.BoneMeal} 64`);
-                            player.runCommand(`give @s ${MinecraftItemTypes.Shears}`);
+                            player.runCommand(`give @s minecraft:bone_meal 64`);
+                            player.runCommand(`give @s minecraft:shears`);
 
                             player.setGameMode(GameMode.Survival);
                         },
@@ -85,10 +87,10 @@ const portfolio: MenuParams = {
                         name: "Brew Potion",
                         icon: "textures/items/brewing_stand",
                         action: (player) => {
-                            player.runCommand(`give @s ${MinecraftBlockTypes.BrewingStand}`);
-                            player.runCommand(`give @s ${MinecraftItemTypes.Potion} 3 4`);
+                            player.runCommand(`give @s minecraft:brewing_stand`);
+                            player.runCommand(`give @s minecraft:potion 3 4`);
                             player.runCommand("give @s qcs_portfolio:diamond_dust");
-                            player.runCommand(`give @s ${MinecraftItemTypes.BlazePowder}`);
+                            player.runCommand(`give @s minecraft:blaze_powder`);
 
                             player.setGameMode(GameMode.Survival);
                         },
@@ -108,9 +110,9 @@ const portfolio: MenuParams = {
                         icon: "textures/qcs/portfolio/blocks/diamond_dust_ore",
                         action: (player) => {
                             player.runCommand("give @s qcs_portfolio:diamond_dust_ore 64");
-                            player.runCommand(`give @s ${MinecraftItemTypes.DiamondPickaxe}`);
-                            player.runCommand(`give @s ${MinecraftBlockTypes.Tnt} 64`);
-                            player.runCommand(`give @s ${MinecraftItemTypes.FlintAndSteel}`);
+                            player.runCommand(`give @s minecraft:diamond_pickaxe`);
+                            player.runCommand(`give @s minecraft:tnt 64`);
+                            player.runCommand(`give @s minecraft:flint_and_steel`);
 
                             player.setGameMode(GameMode.Survival);
                         },
@@ -125,9 +127,13 @@ const portfolio: MenuParams = {
                 header: "Gravity Axe",
                 info: "Mines every log connected to a given tree (enchantment support).",
                 recipe: {
-                    keys: {
-                        1: "Netherite Axe",
-                        2: "Diamond Dust",
+                    key: {
+                        1: {
+                            item: "Netherite Axe",
+                        },
+                        2: {
+                            item: "Diamond Dust",
+                        },
                     },
                 },
                 buttons: [
@@ -135,8 +141,8 @@ const portfolio: MenuParams = {
                         name: "Obtain Gravity Axe",
                         icon: "textures/items/netherite_axe",
                         action: (player) => {
-                            player.runCommand(`give @s ${MinecraftItemTypes.JungleSapling} 64`);
-                            player.runCommand(`give @s ${MinecraftItemTypes.BoneMeal} 64`);
+                            player.runCommand(`give @s minecraft:jungle_sapling 64`);
+                            player.runCommand(`give @s minecraft:bone_meal 64`);
                             player.runCommand("give @s qcs_portfolio:gravity_axe");
 
                             player.setGameMode(GameMode.Survival);
@@ -155,9 +161,13 @@ const portfolio: MenuParams = {
                     "Item can be off handed.",
                 ],
                 recipe: {
-                    keys: {
-                        1: "Torch",
-                        2: "Diamond Dust",
+                    key: {
+                        1: {
+                            item: "Torch",
+                        },
+                        2: {
+                            item: "Diamond Dust",
+                        },
                     },
                 },
                 buttons: [
@@ -179,9 +189,13 @@ const portfolio: MenuParams = {
                 header: "Lightning TNT",
                 info: "Custom TNT that spawns lightning bolts around the area.",
                 recipe: {
-                    keys: {
-                        1: "TNT",
-                        2: "Diamond Dust",
+                    key: {
+                        1: {
+                            item: "TNT",
+                        },
+                        2: {
+                            item: "Diamond Dust",
+                        },
                     },
                 },
                 buttons: [
@@ -190,7 +204,7 @@ const portfolio: MenuParams = {
                         icon: "textures/qcs/portfolio/ui/lightning_tnt",
                         action: (player) => {
                             player.runCommand("give @s qcs_portfolio:lightning_tnt_block 64");
-                            player.runCommand(`give @s ${MinecraftItemTypes.FlintAndSteel}`);
+                            player.runCommand(`give @s minecraft:flint_and_steel`);
 
                             player.setGameMode(GameMode.Survival);
                         },
@@ -204,9 +218,13 @@ const portfolio: MenuParams = {
             subMenu: {
                 info: "Creates a 3x3x3 explosion after a block is mined.",
                 recipe: {
-                    keys: {
-                        1: "Netherite Pickaxe",
-                        2: "Diamond Dust",
+                    key: {
+                        1: {
+                            item: "Netherite Pickaxe",
+                        },
+                        2: {
+                            item: "Diamond Dust",
+                        },
                     },
                 },
                 buttons: [
@@ -238,11 +256,11 @@ const portfolio: MenuParams = {
                                     "start",
                                     2,
                                     player.dimension,
-                                    player.location,
+                                    player.location
                                 );
                             } catch {
                                 return console.warn(
-                                    "Failed to generate stucture, try a flatter space?",
+                                    "Failed to generate stucture, try a flatter space?"
                                 );
                             }
                             player.playMusic("music.qcs_portfolio.backrooms", { loop: true });
