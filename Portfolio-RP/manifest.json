@@ -1,28 +1,28 @@
 {
-	"format_version": 2,
-	"header": {
-		"name": "pack.name",
-		"description": "pack.description",
-		"uuid": "ef701b4c-c1fa-49be-a854-a7f931754a09",
-		"pack_scope": "world",
-		"version": [1, 0, 0],
-		"min_engine_version": [1, 21, 20]
-	},
-	"modules": [
-		{
-			"type": "resources",
-			"uuid": "07c0d532-6c08-45af-915d-5aef4c2bd96b",
-			"version": [1, 0, 0]
-		}
-	],
-	"dependencies": [
-		{
-			"uuid": "df5cf1e4-8000-4caf-a999-15f5cc15e529",
-			"version": [1, 0, 0]
-		}
-	],
-	"metadata": {
-		"authors": ["Quantum Cube Studios"],
-		"product_type": "addon"
-	}
+    "format_version": 2,
+    "header": {
+        "name": "pack.name",
+        "description": "pack.description",
+        "uuid": "ef701b4c-c1fa-49be-a854-a7f931754a09",
+        "pack_scope": "world",
+        "version": [1, 0, 0],
+        "min_engine_version": [1, 26, 0]
+    },
+    "modules": [
+        {
+            "type": "resources",
+            "uuid": "07c0d532-6c08-45af-915d-5aef4c2bd96b",
+            "version": [1, 0, 0]
+        }
+    ],
+    "dependencies": [
+        {
+            "uuid": "df5cf1e4-8000-4caf-a999-15f5cc15e529",
+            "version": [1, 0, 0]
+        }
+    ],
+    "metadata": {
+        "authors": ["Quantum Cube Studios"],
+        "product_type": "addon"
+    }
 }
